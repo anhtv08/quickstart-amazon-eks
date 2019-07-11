@@ -1,6 +1,15 @@
 # quickstart-amazon-eks
 ## Modular and Scalable Amazon EKS Architecture
 
+## Provising elk on aws based on the recommended architecture of aws.
+
+### Highlights from configurations:
+- 3x3 ( 3 public and private subnet), each public subnet having a basion host as jump box and a NAT gateway for outbound connection to internet
+- The kube cluster consists of 3 work nodes ( data plane) and  3 master nodes in control plane
+- Instance size is minimized to t2.small
+- This provision is occur the cost even for Free tier acccount!
+
+
 This Quick Start helps you to deploy a Kubernetes cluster that uses Amazon Elastic Container Service for Kubernetes (Amazon EKS), enabling you to deploy, manage, and scale containerized applications running on Kubernetes on the Amazon Web Services (AWS) Cloud.
 
 Amazon EKS runs the Kubernetes management infrastructure for you across multiple AWS Availability Zones to eliminate a single point of failure. Amazon EKS is also certified Kubernetes conformant, and this reference deployment provides custom resources that enable you to deploy and manage your Kubernetes applications using AWS CloudFormation by declaring Kubernetes manifests or Helm charts directly in AWS CloudFormation templates.
