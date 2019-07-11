@@ -3,6 +3,7 @@ Description: Deploys an EKS cluster into an existing VPC (qs-1p7nknoi6)
 Parameters:
   KeyPairName:
     Type: AWS::EC2::KeyPair::KeyName
+    Default: myKP_Oregon
   NodeAMIOS:
     AllowedValues:
       - Amazon-Linux-HVM
@@ -11,11 +12,11 @@ Parameters:
     Type: String
   QSS3BucketName:
     AllowedPattern: ^[0-9a-zA-Z]+([0-9a-zA-Z-]*[0-9a-zA-Z])*$
-    Default: aws-quickstart
+    Default: joey-aws-quickstart
     Type: String
   QSS3KeyPrefix:
     AllowedPattern: ^[0-9a-zA-Z-/.]*$
-    Default: quickstart-amazon-eks/
+    Default: joey-quickstart-amazon-eks/
     Type: String
   RemoteAccessCIDR:
     AllowedPattern: ^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])(\/([0-9]|[1-2][0-9]|3[0-2]))$
@@ -24,7 +25,7 @@ Parameters:
     Default: ""
     Type: CommaDelimitedList
   NodeInstanceType:
-    Default: t3.medium
+    Default: t2.small
     AllowedValues:
       - t2.small
       - t2.medium
@@ -109,10 +110,10 @@ Parameters:
     ConstraintDescription: Must be a valid EC2 instance type
     Type: String
   NumberOfNodes:
-    Default: 3
+    Default: 1
     Type: Number
   MaxNumberOfNodes:
-    Default: 3
+    Default: 1
     Type: Number
   NodeGroupName:
     Default: Default
