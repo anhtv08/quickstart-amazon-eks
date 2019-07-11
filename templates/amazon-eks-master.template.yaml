@@ -106,6 +106,8 @@ Parameters:
       Availability Zones are used for this deployment, and the logical order of your
       selections is preserved.
     Type: List<AWS::EC2::AvailabilityZone::Name>
+    Default: us-east-2a,us-east-2b,us-east-2c
+
   KeyPairName:
     Description: The name of an existing public/private key pair, which allows you
       to securely connect to your instance after it launches

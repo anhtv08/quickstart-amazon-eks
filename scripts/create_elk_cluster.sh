@@ -8,5 +8,3 @@ aws cloudformation deploy \
 --template-file $template_dir/amazon-eks-master.template.yaml \
 --stack-name $stack_name \
 --capabilities CAPABILITY_IAM
-
-
